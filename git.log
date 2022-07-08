@@ -1,0 +1,65 @@
+https://backlog.com/git-tutorial/tw/intro/intro1_4.html
+
+若想把變更與新增的檔案/目錄儲存到(數據庫)中，您需要執行提交（Commit）。
+執行提交後，數據庫裡會產生上次提交的狀態與現在狀態的(差異記錄)（也被稱為 Revision）。
+為了區分提交，系統會產生一組識別碼來給提交命名
+
+工作目錄（Working Tree）是保存您目前正在處理檔案的目錄，Git 相關的操作都會在這個目錄下完成。
+索引(Index )位於工作目錄和數據庫之間，是為了向數據庫提交作準備的暫存區域。
+
+Git在執行提交的時候，不是直接將工作目錄的狀態儲存到數據庫，而是將索引的狀態儲存到數據庫。
+因此，要提交變更 (commit)，首先必需要把變更內容加入到索引中。
+
+**
+
+請在電腦上的任何一個地方建立git目錄。
+在git bash裡移動到這個目錄, ex
+$ cd c:
+$ cd git
+
+使用init命令將目錄建立為本地端數據庫。
+$ git init
+Initialized empty Git repository in c:/git/.git/
+
+**
+
+複製（Clone）
+要下載遠端數據庫需要進行複製（Clone）的操作。
+$ git clone https://github.com/OliCode99/MyGAW.git
+
+**
+
+$ git status
+
+(use "git add" to track)
+some file還不是歷史記錄追踪的對象，只要將其加入到索引，就可以登錄成為追踪對象。
+要將檔案加入到索引，可以使用add <file>命令。<file>是指向要加入索引的檔案。若要指向多個檔案，可用空白鍵將檔案們分開。
+$ git add git.TXT
+
+=> git add file 就等於 stage file.
+如果要 unstage --> git restore --stage <file>
+
+**
+
+提交 (Commit)
+已加入索引，我們可以準備提交檔案了，請執行commit命令提交，commit命令如下：
+
+$ git commit -m "<提交訊息>"
+
+$ git log
+$ git log --oneline
+
+**
+
+Push (推送)
+為了將本地端數據庫的修改歷史共享到遠程數據庫，必須上​​傳本地端數據庫中儲存的修改歷史。
+
+
+
+
+
+
+
+
+
+
